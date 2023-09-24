@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - hw*
-      - master
-      - hw02_fix_app
 
 jobs:
   lint:
