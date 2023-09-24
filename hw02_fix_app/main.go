@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/fixme_my_friend/hw02_fix_app/printer"
 	"github.com/fixme_my_friend/hw02_fix_app/reader"
@@ -11,7 +12,7 @@ import (
 func main() {
 	var err error
 	var staff []types.Employee
-	path := "data.json"
+	var path string
 
 	fmt.Println("Enter data file path: ")
 	fmt.Scanln(&path)
@@ -21,8 +22,10 @@ func main() {
 	}
 
 	staff, err = reader.ReadJSON(path)
-
-	fmt.Print(err)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		return
+	}
 
 	printer.PrintStaff(staff)
 }
