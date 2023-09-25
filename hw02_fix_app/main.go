@@ -1,29 +1,31 @@
-package init
+package main
 
 import (
-	"github.com/fixme_my_friend/hw02_fix_app/printer"
-	"github.com/fixme_my_friend/hw02_fix_app/reader"
-	"github.com/fixme_my_friend/hw02_fix_app/types"
 	"fmt"
+	"os"
+
+	"github.com/angbuh/golang-homeworks/hw02_fix_app/printer"
+	"github.com/angbuh/golang-homeworks/hw02_fix_app/reader"
+	"github.com/angbuh/golang-homeworks/hw02_fix_app/types"
 )
 
-func init() {
-	var path string = "data.json"
-
-	fmt.Printf("Enter data file path: ")
-	fmt.Scanln(&path)
-
+func main() {
 	var err error
 	var staff []types.Employee
+	var path string
+
+	fmt.Println("Enter data file path: ")
+	fmt.Scanln(&path)
 
 	if len(path) == 0 {
 		path = "data.json"
-	} else {
 	}
 
-	staff, err = reader.ReadJSON(path, -1)
-
-	fmt.Print(err)
+	staff, err = reader.ReadJSON(path)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		return
+	}
 
 	printer.PrintStaff(staff)
 }
