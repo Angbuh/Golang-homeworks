@@ -2,7 +2,7 @@ go 1.20
 
 use (
 	./hw02_fix_app
-	// ./hw03_chessboard
+	./hw03_chessboard
 	./hw04_struct_comparator
 	./hw05_shapes
 	// ./hw06_testing
