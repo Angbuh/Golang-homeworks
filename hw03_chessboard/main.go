@@ -1,25 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/angbuh/golang-homeworks/hw03_chessboard/boardcreator"
+)
 
 func main() {
-	var length int
+	var size int
 
-	fmt.Scan(&length)
-	for i := 0; i < length; i++ {
-		if i%2 == 0 {
-			fmt.Print("#")
-		}
-		for j := 0; j < length; j++ {
-			if i%2 == 0 && j == length-1 {
-				break
-			}
-			if j%2 == 0 {
-				fmt.Print(" ")
-			} else {
-				fmt.Print("#")
-			}
-		}
-		fmt.Println()
-	}
+	fmt.Print("Введите размер доски: ")
+	fmt.Scan(&size)
+	fmt.Print(boardcreator.CreateBoard(size))
 }

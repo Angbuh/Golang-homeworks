@@ -27,5 +27,5 @@ func main() {
 		return
 	}
 
-	printer.PrintStaff(staff)
+	fmt.Println(printer.StaffToString(staff))
 }

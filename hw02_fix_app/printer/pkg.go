@@ -1,14 +1,19 @@
 package printer
 
 import (
-	"fmt"
-
 	"github.com/angbuh/golang-homeworks/hw02_fix_app/types"
 )
 
-func PrintStaff(staff []types.Employee) {
-	for i := 0; i < len(staff); i++ {
-		fmt.Printf("User ID: %d; Age: %d; Name: %s; Department ID: %d; ",
-			staff[i].UserID, staff[i].Age, staff[i].Name, staff[i].DepartmentID)
+func StaffToString(staff []types.Employee) string {
+	result := "{"
+
+	for i := range staff {
+		result += staff[i].String()
+		if i != len(staff)-1 {
+			result += "; "
+		}
 	}
+
+	result += "}"
+	return result
 }
