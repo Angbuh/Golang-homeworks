@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/angbuh/golang-homeworks/hw04_struct_comparator/book"
+	"github.com/angbuh/golang-homeworks/hw04_struct_comparator/comparator"
 )
 
 func main() {
@@ -10,7 +11,7 @@ func main() {
 		book.New(54, "Tree", "Kate God", 2001, 12, 7.0),
 	}
 
-	comparator, err := book.NewComparator(book.CompareByYear)
+	comparator, err := comparator.NewComparator(comparator.CompareByYear)
 	if err != nil {
 		panic(err)
 	}
