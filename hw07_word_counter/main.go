@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/fixme_my_friend/hw07_word_counter/wordcounter"
+	"github.com/angbuh/golang-homeworks/hw07_word_counter/wordcounter"
 )
 
 func main() {
