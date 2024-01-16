@@ -8,7 +8,7 @@ use (
 	./hw06_testing
 	./hw07_word_counter
 	./hw08_binary_search
-	// ./hw09_serialize
+	./hw09_serialize
 	// ./hw10_motion_sensor
 	// ./hw11_worker_pool
 	// ./hw12_log_util
