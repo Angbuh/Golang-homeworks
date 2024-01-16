@@ -2,6 +2,7 @@ package book
 
 import (
 	"encoding/json"
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -50,8 +51,10 @@ func TestMarshalJSONslice(t *testing.T) {
 			Rate:   7.0,
 		},
 	}
-	expected := `[{"id":23,"title":"Tree","author":"Kate God","year":1999,"size":10,"rate":7.5},
-{"id":23,"title":"Flower","author":"Kate Bad","year":2001,"size":12,"rate":7}]`
+	expected := strings.ReplaceAll(`
+[{"id":23,"title":"Tree","author":"Kate God","year":1999,"size":10,"rate":7.5},
+{"id":23,"title":"Flower","author":"Kate Bad","year":2001,"size":12,"rate":7}]
+`, "\n", "")
 	res, err := json.Marshal(&testdata)
 	assert.Nil(t, err)
 	assert.Equal(t, expected, string(res))
